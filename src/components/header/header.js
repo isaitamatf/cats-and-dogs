@@ -1,5 +1,5 @@
-import React from "react"
-import ReactLogo from "../../assets/images/react-logo.png"
+import React from "react";
+import ReactLogo from "../../assets/images/react-logo.png";
 
 export function Header() {
   return (
@@ -11,5 +11,5 @@ export function Header() {
         <span>Cats & Dogs</span>
       </div>
     </nav>
-  )
+  );
 }

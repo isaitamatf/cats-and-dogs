@@ -10,7 +10,7 @@ export function Body() {
 
   const onClick = () => {
     dispatch(fetchGifs());
-  }
+  };
 
   return (
     <div className="cad-body">

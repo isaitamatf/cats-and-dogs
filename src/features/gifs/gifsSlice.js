@@ -19,7 +19,7 @@ export const fetchGifs = createAsyncThunk("gifs/fetchGifs", async () => {
 export const gifsSlice = createSlice({
   name: "gifs",
   initialState: {
-    gifs: []
+    gifs: [],
   },
   reducers: {},
   extraReducers(builder) {
@@ -28,14 +28,14 @@ export const gifsSlice = createSlice({
         // LOADING
       })
       .addCase(fetchGifs.fulfilled, (state, action) => {
-        state.gifs = state.gifs.concat(action.payload)
+        state.gifs = state.gifs.concat(action.payload);
       })
       .addCase(fetchGifs.rejected, (state, action) => {
         // FAILED
-      })
-  }
+      });
+  },
 });
 
 export const selectAllGifs = (reducer) => reducer.gifsReducer.gifs;
 
-export default gifsSlice.reducer
+export default gifsSlice.reducer;

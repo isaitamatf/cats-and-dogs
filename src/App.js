@@ -1,5 +1,5 @@
-import { Body, Header } from './components'
-import './App.scss';
+import { Body, Header } from "./components";
+import "./App.scss";
 
 function App() {
   return (
