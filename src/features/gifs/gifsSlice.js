@@ -4,12 +4,12 @@ import axios from "axios";
 const GIPHY_API_URL = "https://api.giphy.com/v1/gifs/search";
 const GIPHY_API_KEY = "1LZP1SdOC2XzWSL3m2JOAlWYof4X58D2";
 
-export const fetchGifs = createAsyncThunk("gifs/fetchGifs", async () => {
+export const fetchGifs = createAsyncThunk("gifs/fetchGifs", async (offset) => {
   const response = await axios.get(GIPHY_API_URL, {
     params: {
       api_key: GIPHY_API_KEY,
       limit: 25,
-      offset: 0,
+      offset: (offset * 25),
       q: "cats and dogs",
     },
   });
@@ -28,7 +28,7 @@ export const gifsSlice = createSlice({
         // LOADING
       })
       .addCase(fetchGifs.fulfilled, (state, action) => {
-        state.gifs = state.gifs.concat(action.payload);
+        state.gifs = action.payload;
       })
       .addCase(fetchGifs.rejected, (state, action) => {
         // FAILED

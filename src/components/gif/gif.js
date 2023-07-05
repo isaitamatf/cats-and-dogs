@@ -7,7 +7,7 @@ export function Gif({ gif, setGifSelected }) {
   }
   return (
     <div className="cad-gif">
-      <img alt={title} src={images.original.url} onClick={onClickGif} />
+      <img alt={title} src={images.preview_gif.url} onClick={onClickGif} />
     </div>
   );
 }

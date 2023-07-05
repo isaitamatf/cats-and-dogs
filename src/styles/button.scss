@@ -10,7 +10,12 @@ $bg-color: #149ECA;
     font-size: 16px;
     border-radius: 8px;
   }
-  > button:hover {
+  > :not(button:disabled):hover  {
     background-color: darken($bg-color, 20%);
+  }
+  > button:disabled,
+  > button[disabled] {
+    opacity: 0.5;
+    cursor: default;
   }
 }
