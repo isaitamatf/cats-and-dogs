@@ -1,6 +1,13 @@
 {
   "name": "cats-and-dogs",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Isaac Batista"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isaitamatf/cats-and-dogs"
+  },
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
