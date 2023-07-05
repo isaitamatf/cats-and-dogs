@@ -7,7 +7,7 @@ import ReactLogo from "../../assets/images/react-logo.png";
  */
 export function Header() {
   return (
-    <nav className="cad-header">
+    <nav className="cad-header" data-testid="cad-header">
       <div className="cad-header-img">
         <img alt="React Logo" src={ReactLogo} />
       </div>

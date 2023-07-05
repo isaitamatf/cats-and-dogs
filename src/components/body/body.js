@@ -74,7 +74,7 @@ export function Body() {
   };
 
   return (
-    <div className="cad-body">
+    <div className="cad-body" data-testid="cad-body">
       {showControlsComponent()}
       {showListComponent()}
       {showModalComponent()}

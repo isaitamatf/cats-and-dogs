@@ -13,5 +13,9 @@ export function List({ gifs, setGifSelected }) {
       return <Gif gif={gif} key={gif.id} setGifSelected={setGifSelected} />;
     });
   };
-  return <div className="cad-list">{showGifsElements()}</div>;
+  return (
+    <div className="cad-list" data-testid="cad-list">
+      {showGifsElements()}
+    </div>
+  );
 }

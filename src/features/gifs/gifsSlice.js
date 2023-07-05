@@ -40,6 +40,11 @@ export const gifsSlice = createSlice({
   },
 });
 
-export const selectAllGifs = (reducer) => reducer.gifsReducer.gifs;
+export const selectAllGifs = (reducer) =>
+  reducer.gifsReducer &&
+  reducer.gifsReducer.gifs &&
+  reducer.gifsReducer.gifs.length > 0
+    ? reducer.gifsReducer.gifs
+    : [];
 
 export default gifsSlice.reducer;

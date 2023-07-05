@@ -9,7 +9,7 @@ import React from "react";
 export function Gif({ gif, setGifSelected }) {
   const { title, images } = gif;
   return (
-    <div className="cad-gif">
+    <div className="cad-gif" data-testid="cad-gif">
       <img
         alt={title}
         src={images.preview_gif.url}

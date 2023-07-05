@@ -11,7 +11,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 export function Modal({ gif, setGifSelected }) {
   const { title, images } = gif;
   return (
-    <div className="cad-modal">
+    <div className="cad-modal" data-testid="cad-modal">
       <FontAwesomeIcon
         icon={faXmark}
         color="#EBECF0"
