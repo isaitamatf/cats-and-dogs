@@ -1,0 +1,11 @@
+.cad-gif {
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  padding: 2.5%;
+  > img {
+    object-fit: cover;
+    width: 100%;
+    cursor: pointer;
+  }
+}
