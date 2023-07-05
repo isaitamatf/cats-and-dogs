@@ -1,7 +1,6 @@
 $primary-color: #149ECA;
 
 .cad-gif {
-  width: 8%;
   display: flex;
   flex-direction: row;
   padding: 1%;
@@ -15,10 +14,34 @@ $primary-color: #149ECA;
     border-width: 0;
   }
   > img:hover {
-    transform: scale(2);
+    transform: scale(1.2);
     border-width: 2px;
     padding: 4px;
     border-radius: 2px;
     background-color: #23272F;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cad-gif {
+    width: 8%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .cad-gif {
+    width: 18%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cad-gif {
+    width: 23%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .cad-gif {
+    width: 48%;
   }
 }
