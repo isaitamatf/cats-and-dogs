@@ -1,5 +1,7 @@
+@use 'colors';
+
 .cad-body {
-  background-color: #23272F;
+  background-color: colors.$dark-secondary-color;
   height: 100%;
   width: 100%;
   overflow-y: auto;
@@ -13,14 +15,14 @@
       height: 50px;
       width: 50px;
       margin: 0 16px;
-      background-color: #149ECA;
+      background-color: colors.$primary-color;
       border-radius: 50%;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
       > span {
-        color: #EBECF0;
+        color: colors.$light-primary-color;
         font-size: 16px;
       }
     }

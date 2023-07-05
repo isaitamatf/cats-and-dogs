@@ -1,4 +1,4 @@
-$primary-color: #149ECA;
+@use 'colors';
 
 .cad-gif {
   display: flex;
@@ -10,7 +10,7 @@ $primary-color: #149ECA;
     cursor: pointer;
     transition: all 0.20s;
     border-style: solid;
-    border-color: $primary-color;
+    border-color: colors.$primary-color;
     border-width: 0;
   }
   > img:hover {
@@ -18,7 +18,7 @@ $primary-color: #149ECA;
     border-width: 2px;
     padding: 4px;
     border-radius: 2px;
-    background-color: #23272F;
+    background-color: colors.$dark-secondary-color;
   }
 }
 

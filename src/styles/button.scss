@@ -1,17 +1,17 @@
-$bg-color: #149ECA;
+@use 'colors';
 
 .cad-button {
   > button {
-    background-color: $bg-color;
+    background-color: colors.$primary-color;
     border: 0;
-    color: #EBECF0;
+    color: colors.$light-primary-color;
     cursor: pointer;
     padding: 16px;
     font-size: 16px;
     border-radius: 8px;
   }
   > :not(button:disabled):hover  {
-    background-color: darken($bg-color, 20%);
+    background-color: darken(colors.$primary-color, 20%);
   }
   > button:disabled,
   > button[disabled] {
