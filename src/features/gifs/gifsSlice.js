@@ -1,16 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const GIPHY_API_URL = "https://api.giphy.com/v1/gifs/search";
-const GIPHY_API_KEY = "1LZP1SdOC2XzWSL3m2JOAlWYof4X58D2";
+import { GIPHY_API_KEY, GIPHY_API_URL } from "../../constants";
 
+/**
+ * @description Function that makes the API call
+ * @param {number} offset Selected page in the application
+ * @returns {Array}
+ */
 export const fetchGifs = createAsyncThunk("gifs/fetchGifs", async (offset) => {
   const response = await axios.get(GIPHY_API_URL, {
     params: {
       api_key: GIPHY_API_KEY,
       limit: 25,
-      offset: (offset * 25),
-      q: "cats and dogs",
+      offset: offset * 25,
+      q: "cats & dogs",
     },
   });
   return response.data.data;

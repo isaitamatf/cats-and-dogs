@@ -1,6 +1,10 @@
 import React from "react";
 import ReactLogo from "../../assets/images/react-logo.png";
 
+/**
+ * @description Header component
+ * @returns {JSX}
+ */
 export function Header() {
   return (
     <nav className="cad-header">
