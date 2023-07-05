@@ -22,11 +22,22 @@ export function Body() {
     dispatch(fetchGifs());
   };
 
+  const showButtonComponent = () => {
+    return !gifs || (gifs && gifs.length === 0) ? (
+      <div className="cad-row">
+        <Button
+          buttonText="Show Latest"
+          onClick={onClickButton}
+        />
+      </div>
+    ) : (
+      <></>
+    );
+  }
+
   return (
     <div className="cad-body">
-      <div className="cad-row">
-        <Button buttonText="Show Latest" onClick={onClickButton} />
-      </div>
+      {showButtonComponent()}
       {showListComponent()}
     </div>
   );
