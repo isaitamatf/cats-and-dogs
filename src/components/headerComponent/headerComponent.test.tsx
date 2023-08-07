@@ -1,11 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { Header } from "./header";
+import { HeaderComponent } from "./headerComponent";
 
 describe("Header Component", () => {
   it("Component is render", () => {
-    render(<Header />);
+    render(<HeaderComponent />);
     expect(screen.getByTestId("cad-header")).toBeTruthy();
   });
 });

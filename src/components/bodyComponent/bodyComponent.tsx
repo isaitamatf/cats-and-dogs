@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, List, Modal } from "../../components";
+import { ButtonComponent, ListComponent, ModalComponent } from "..";
 
 import { useSelector, useDispatch } from "react-redux";
 import { fetchGifs, selectAllGifs } from "../../features/gifs/gifsSlice";
@@ -8,7 +8,7 @@ import { fetchGifs, selectAllGifs } from "../../features/gifs/gifsSlice";
  * @description Body component
  * @returns {JSX}
  */
-export function Body() {
+const BodyComponent: React.FC = () => {
   const dispatch = useDispatch();
   // Status variable that controls the selected page in the application
   const [offset, setOffset] = useState(0);
@@ -29,7 +29,7 @@ export function Body() {
   const showListComponent = () => {
     return gifs && gifs.length > 0 ? (
       <div className="cad-row">
-        <List gifs={gifs} setGifSelected={setGifSelected} />
+        <ListComponent gifs={gifs} setGifSelected={setGifSelected} />
       </div>
     ) : (
       <></>
@@ -42,14 +42,14 @@ export function Body() {
   const showControlsComponent = () => {
     return !gifs || (gifs && gifs.length === 0) ? (
       <div className="cad-row">
-        <Button
+        <ButtonComponent
           buttonText="Show Latest"
           onClick={() => setOffset(offset + 1)}
         />
       </div>
     ) : (
       <div className="cad-row">
-        <Button
+        <ButtonComponent
           buttonText="Prev"
           onClick={() => setOffset(offset - 1)}
           disabled={!offset || (offset && offset <= 1) ? true : false}
@@ -57,7 +57,7 @@ export function Body() {
         <div className="cad-pagination">
           <span>{offset}</span>
         </div>
-        <Button buttonText="Next" onClick={() => setOffset(offset + 1)} />
+        <ButtonComponent buttonText="Next" onClick={() => setOffset(offset + 1)} />
       </div>
     );
   };
@@ -67,7 +67,7 @@ export function Body() {
    */
   const showModalComponent = () => {
     return gifSelected && Object.keys(gifSelected).length > 0 ? (
-      <Modal gif={gifSelected} setGifSelected={setGifSelected} />
+      <ModalComponent gif={gifSelected} setGifSelected={setGifSelected} />
     ) : (
       <></>
     );
@@ -80,4 +80,6 @@ export function Body() {
       {showModalComponent()}
     </div>
   );
-}
+};
+
+export { BodyComponent };

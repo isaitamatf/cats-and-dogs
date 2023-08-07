@@ -1,4 +1,10 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
+
+export type ButtonComponentProps = {
+  buttonText?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
+};
 
 /**
  * @description Button component
@@ -7,7 +13,11 @@ import React from "react";
  * @param {boolean} disabled Parameter that disables or enables the button.
  * @returns {JSX}
  */
-export function Button({ buttonText, onClick, disabled }) {
+const ButtonComponent: React.FC<ButtonComponentProps> = ({
+  buttonText,
+  onClick,
+  disabled,
+}) => {
   return (
     <div className="cad-button" data-testid="cad-button">
       <button onClick={onClick} disabled={disabled}>
@@ -15,4 +25,6 @@ export function Button({ buttonText, onClick, disabled }) {
       </button>
     </div>
   );
-}
+};
+
+export { ButtonComponent };

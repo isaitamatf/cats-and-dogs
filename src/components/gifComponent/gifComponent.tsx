@@ -1,12 +1,17 @@
 import React from "react";
 
+export type GifComponentProps = {
+  gif: any;
+  setGifSelected: React.Dispatch<React.SetStateAction<{}>>;
+};
+
 /**
  * @description Gif component
  * @param {object} gif Object with all the information in the gif.
  * @param {Function} setGifSelected Function that selects and saves the gif in the status variables.
  * @returns {JSX}
  */
-export function Gif({ gif, setGifSelected }) {
+const GifComponent: React.FC<GifComponentProps> = ({ gif, setGifSelected }) => {
   const { title, images } = gif;
   return (
     <div className="cad-gif" data-testid="cad-gif">
@@ -17,4 +22,6 @@ export function Gif({ gif, setGifSelected }) {
       />
     </div>
   );
-}
+};
+
+export { GifComponent };

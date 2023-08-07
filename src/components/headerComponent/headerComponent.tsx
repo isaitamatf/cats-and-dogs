@@ -1,11 +1,11 @@
 import React from "react";
-import ReactLogo from "../../assets/images/react-logo.png";
+import ReactLogo from "../../assets/logo.png";
 
 /**
  * @description Header component
  * @returns {JSX}
  */
-export function Header() {
+const HeaderComponent: React.FC = () => {
   return (
     <nav className="cad-header" data-testid="cad-header">
       <div className="cad-header-img">
@@ -17,3 +17,5 @@ export function Header() {
     </nav>
   );
 }
+
+export { HeaderComponent };

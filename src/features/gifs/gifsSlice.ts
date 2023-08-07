@@ -8,7 +8,7 @@ import { GIPHY_API_KEY, GIPHY_API_URL } from "../../constants";
  * @param {number} offset Selected page in the application
  * @returns {Array}
  */
-export const fetchGifs = createAsyncThunk("gifs/fetchGifs", async (offset) => {
+export const fetchGifs: any = createAsyncThunk("gifs/fetchGifs", async (offset: number) => {
   const response = await axios.get(GIPHY_API_URL, {
     params: {
       api_key: GIPHY_API_KEY,
@@ -40,10 +40,10 @@ export const gifsSlice = createSlice({
   },
 });
 
-export const selectAllGifs = (reducer) =>
+export const selectAllGifs = (reducer: any) =>
   reducer.gifsReducer &&
-  reducer.gifsReducer.gifs &&
-  reducer.gifsReducer.gifs.length > 0
+    reducer.gifsReducer.gifs &&
+    reducer.gifsReducer.gifs.length > 0
     ? reducer.gifsReducer.gifs
     : [];
 

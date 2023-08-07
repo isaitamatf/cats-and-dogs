@@ -1,5 +1,10 @@
 import React from "react";
-import { Gif } from "../../components";
+import { GifComponent } from "..";
+
+export type ListComponentProps = {
+  gifs: any[];
+  setGifSelected: React.Dispatch<React.SetStateAction<{}>>;
+};
 
 /**
  * @description List component
@@ -7,10 +12,12 @@ import { Gif } from "../../components";
  * @param {Function} setGifSelected Function that selects and saves the gif in the status variables.
  * @returns {JSX}
  */
-export function List({ gifs, setGifSelected }) {
+const ListComponent: React.FC<ListComponentProps> = ({ gifs, setGifSelected }) => {
   const showGifsElements = () => {
     return gifs.map((gif) => {
-      return <Gif gif={gif} key={gif.id} setGifSelected={setGifSelected} />;
+      return (
+        <GifComponent gif={gif} key={gif.id} setGifSelected={setGifSelected} />
+      );
     });
   };
   return (
@@ -19,3 +26,5 @@ export function List({ gifs, setGifSelected }) {
     </div>
   );
 }
+
+export { ListComponent };

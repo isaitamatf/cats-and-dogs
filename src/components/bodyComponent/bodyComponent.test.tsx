@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 
-import { Body } from "./body";
+import { BodyComponent } from "./bodyComponent";
 import { INITIAL_STATE } from "../../constants";
 
 describe("Body Component", () => {
@@ -13,7 +13,7 @@ describe("Body Component", () => {
   it("Component is render", () => {
     render(
       <Provider store={store}>
-        <Body />
+        <BodyComponent />
       </Provider>
     );
     expect(screen.getByTestId("cad-body")).toBeTruthy();

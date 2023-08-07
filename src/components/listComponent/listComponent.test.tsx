@@ -1,12 +1,12 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import { List } from "./list";
+import { ListComponent } from "./listComponent";
 import { GIFS_MOCKUPS } from "../../constants";
 
 describe("List Component", () => {
   it("Component is render", () => {
-    render(<List gifs={GIFS_MOCKUPS} />);
+    render(<ListComponent gifs={GIFS_MOCKUPS} setGifSelected={() => {}} />);
     expect(screen.getByTestId("cad-list")).toBeTruthy();
   });
 });
